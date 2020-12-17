@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a class="active" href="project.html">Projects</a></li>
+          <li><a href="https://github.com/leoadams1">Github</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        
+        
+    <h1>Here is a list of my projects</h1>
+    <ul id="projectsul" class="project">
+        <li id="projectsli" class="project2">
+            <h2 id="h2C" class="project3">Classroom+</h2>
+            <p id="h2D" class="project3">A project that does stuff</p>
+        </li>
+    </ul>
+    <script>
+        addproject("Website","its this website");
+        addproject("Javascript","that added this");
+        addproject("Texture Pack","for minecraft");
+        function addproject(pname,pdescription){
+            const target = document.getElementById('projectsul');
+            const clonedTarget = target.cloneNode(true);
+            clonedTarget.innerHTML=
+                "<li class='project2'><h2>"+pname+"</h2><p>"+pdescription+"</p></li>";
+            insertAfter(clonedTarget, target)
+        }
+        function insertAfter(newNode, existingNode) {
+            existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+        }
+    </script>
+    </body>
+</html>
